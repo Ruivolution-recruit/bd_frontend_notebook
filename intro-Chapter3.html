@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="Chapter-3.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>intro-Chapter3</title>
+</head>
+<body>
+	<h1>前端基础第三节——CSS</h1>
+	<h2>TL;DR</h2>
+	<ul>
+		<li>标签选择器</li>
+		<li>几个案例</li>
+		<li>CSS盒模型</li>
+	</ul>
+	<h2>标签选择器</h2>
+	<p>
+	1.类型选择器
+	<br>
+	<code>
+		css:a {
+			color:yellow;
+		}
+		<xmp><a href="https://www.baidu.com">百度</a></xmp>
+	</code>
+	<br>
+	<a href="https://www.baidu.com">百度</a>
+	</p>
+	<p>
+		2.id选择器（通过id进行选择）
+		<br>
+		<code>
+			css:
+			#a {
+				color:blue; 
+			}
+			<br>
+			<xmp>html:<div id="a">foo</div></xmp>
+		</code>
+		<div id="a">foo</div>
+	</p>
+	<p>
+		3.类选择器（通过类进行选择）
+		<br>
+		<code>
+			css:.a {
+				color:red;
+			}
+			<xmp>html:<div class="a">foo</div></xmp>
+		</code>
+		<div class="a">foo</div>
+	</p>
+	<p>
+	4.标签属性选择器
+	<code>
+		css:a[href="www.baidu.com"] {
+			background-color:blue;
+		}
+		<xmp>html:<a href="www.baidu.com">百度</a></xmp>
+	</code>
+		<a href="www.baidu.com">百度</a>
+	</p>
+	<p>
+		5.伪类选择器（鼠标放上去试试？）
+		<br>
+		<code>
+			css:#hide {
+				background-color:black;
+				color:black;
+			}
+			#hide:hover {
+				color:white;
+				animation:whenhover  500ms
+			
+			}
+			@keyframes whenhover {
+				
+				from {
+					background-color: black;
+					color: rgb(0, 0, 0);
+				}
+				to {
+					color: white;
+				}
+			}
+			<xmp>html:<span id="hide">（内容）</span></xmp>
+		</code>
+		<span id="hide">你知道的太多了</span>
+	</p>
+	<p>
+		6.后代选择器（导航栏）
+		<br>
+		<code>
+			css: li a {
+				color:white;
+				margin:40px;
+			}
+			<xmp><ul><li><a href="https://www.baidu.com">百度</a></li></ul></xmp>
+				<ul id="navi">
+					<li><a href="https://www.baidu.com">百度</a></li>
+					<li><a href="https://www.baidu.com">百度</a></li>
+					<li><a href="https://www.baidu.com">百度</a></li>
+				</ul>
+		</code>
+	</p>
+	<p>
+		7.BEM命名规范
+		<ul>
+		<li>
+		Block 块独立实体，独立的意义
+		如：header,container,menu,checkbox,input
+		</li>
+		<li>
+		Element 元素block的一部分，没有独立的意义。语意上和block有关系
+		如：menuitem,listitem,checkboxcaption,headertitl
+		</li>
+		<li>
+		Modifier 修饰符block或element上的标记。使用他来改变外观或行为
+		如：disabled,highlighted,checked,fixed,sizebig,coloryellow
+		</li>
+		</ul>
+	</p>
+	<p>
+		8.选择器优先级
+		<ul>
+		<li>类型选择器和伪元素</li>
+		<li>类选择器、属性选择器和伪类</li>
+		<li>ID 选择器</li>
+		</ul>
+	</p>
+	<h2>实例</h2>
+	<p>1.处理溢出文本
+		<p id="textbox">
+			dsadasdsadsadsadasdsadasdasdasdasdasdsadasdasdasd
+		</p>
+	</p>
+	<p>
+		2.简单动画
+		<div id="rotate-word">
+				dsada
+		</div>
+	</p>
+	<p>3.圆形和加载动画
+		<div id="round">
+		</div>
+	</p>
+	<h2>CSS盒模型</h2>
+	<img src="cssbox.JPG">
+</body>
+</html>
